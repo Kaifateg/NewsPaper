@@ -12,7 +12,7 @@ def new_post(sender, instance, **kwargs):
         followers_emails = []
 
         for category in categories:
-            followers = category.followers.all()
+            followers = category.follower.all()
             followers_emails += [f.email for f in followers]
 
-        send_notifications(instance.preview(), instance.pk, instance.title, followers_emails)
+        send_notifications(instance.preview(), instance.pk, instance.name_news, followers_emails)
