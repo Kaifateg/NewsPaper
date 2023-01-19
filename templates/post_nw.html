@@ -1,0 +1,13 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Single_news
+{% endblock title %}
+
+{% load custom_filters %}
+
+{% block content %}
+<h1>Title: {{ postnw.name_news|censor }}</h1>
+<h1>Date of publication: {{ postnw.time_create_post|date:'d.m.Y' }}</h1>
+<h1>Text: {{ postnw.text_news|censor }}</h1>
+{% endblock content %}

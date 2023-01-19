@@ -1,0 +1,39 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Searche
+{% endblock title %}
+
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% block content %}
+
+    <form action="" method="get">
+        {{ filterset.form.as_p }}
+        <input type="submit" value="Найти" />
+    </form>
+    <hr>
+
+    {% if postfilter %}
+        <table>
+            <tr>
+                <td>Title</td>
+                <td>Date of publication</td>
+                <td>Text</td>
+            </tr>
+
+            {% for post in postfilter %}
+            <tr>
+                <td>{{ post.name_news|censor }}</td>
+                <td>{{ post.time_create_post|date:'d.m.Y' }}</td>
+                <td>{{ post.text_news|truncatechars:20|censor }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <h2>There is no news</h2>
+    {% endif %}
+
+{% endblock content %}
+
