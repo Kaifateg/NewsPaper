@@ -2,7 +2,7 @@ from django.db.models.signals import m2m_changed
 from django.dispatch import receiver
 
 from news.models import PostCategory
-from news.utils import send_notifications
+from news.tasks import send_notifications
 
 
 @receiver(m2m_changed, sender=PostCategory)
