@@ -23,10 +23,12 @@ User receives a confirmation email.
 Create .env file with your arguments (without quotes):
    1. SECRET_KEY='Django secret key'
    2. EMAIL_HOST_USER='From Yandex email'
+   
       Example: Your email - user1@yandex.ru. Then EMAIL_HOST_USER=user1
    3. EMAIL_HOST_PASSWORD='From Yandex email'
    4. DEFAULT_FROM_EMAIL='Email to send messages (Yandex)'
    5. CELERY_BROKER_URL=''
+   
       Example: CELERY_BROKER_URL=redis://username:password@host:port
       
 # Start
