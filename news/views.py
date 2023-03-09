@@ -7,6 +7,7 @@ from .filters import *
 from .forms import *
 from .models import *
 
+
 class PostNews(ListView):
     template_name = 'post_news.html'
     context_object_name = 'postnews'
@@ -91,6 +92,7 @@ class CategoryListViev(PostNews):
         context['is_not_follower'] = self.request.user not in self.category.follower.all()
         context['category'] = self.category
         return context
+
 
 @login_required
 def follow(request, pk):
